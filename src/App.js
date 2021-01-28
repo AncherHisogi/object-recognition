@@ -1,17 +1,12 @@
 import './App.css';
-import Navigation from './components/Navigation/Navigation';
-import Logo from './components/Logo/Logo';
-import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import 'tachyons';
+import Bar from './components/Bar/Bar';
+import InputField from './components/InputField/InputField';
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <Logo />
-      <ImageLinkForm />
-      {/*
-      <ObjectRecognition />*/}
+     <Bar />
+     <InputField />
     </div>
   );
 }
