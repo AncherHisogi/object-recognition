@@ -24,14 +24,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FullWidthGrid() {
+export default function InputField({onInputChange, onSearch}) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid className={classes.grid} item xs={12} sm={12}>
-          <Paper className={classes.paper}> <UrlInput /> </Paper>
+          <Paper className={classes.paper}> <UrlInput onInputChange={onInputChange} onSearch={onSearch}/> </Paper>
         </Grid>
         <Grid className={classes.grid} item xs={12} sm={12}>
           <Paper className={classes.paper}> <Picture /> </Paper>

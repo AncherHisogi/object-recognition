@@ -14,23 +14,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function UrlInput() {
+export default function UrlInput({onInputChange, onSearch}) {
   const classes = useStyles();
 
   return (
-    <Box color="text.primary" clone>
-        <form className={classes.root} noValidate autoComplete="off">
-            <TextField 
-            id="outlined-basic"
-            label="Input URL"
-            variant="outlined"
-            style = {{minWidth: '200px'}}/>
-
-        <Button variant="contained" color="primary" href="#contained-buttons" style = {{height:'7ch'}}>Search</Button>
-            
-        </form>
-
-        
-    </Box>
+    <div>
+      <Box color="text.primary" clone >
+          <form className={classes.root} noValidate autoComplete="off">
+              <TextField 
+              id="outlined-basic"
+              label="Input URL"
+              variant="outlined"
+              style = {{minWidth: '200px'}}
+              onChange={onInputChange}
+              />
+          
+          <Button variant="contained"   color="primary"style = {{height:'7ch'}} onClick={onSearch} >Search</Button>
+          </form>
+          
+      </Box>
+     
+    </div>
   );
 }
