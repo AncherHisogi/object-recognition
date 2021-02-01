@@ -9,7 +9,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     margin: 50,
-    
+    zIndex: 1,
+    position: 'relative',
+    top: -250,
+  },
+  grid: {
+    justifyContent:'center',
+    display:'flex',
   },
   paper: {
     padding: theme.spacing(1),
@@ -24,10 +30,10 @@ export default function FullWidthGrid() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={12}>
+        <Grid className={classes.grid} item xs={12} sm={12}>
           <Paper className={classes.paper}> <UrlInput /> </Paper>
         </Grid>
-        <Grid item xs={12} sm={12}>
+        <Grid className={classes.grid} item xs={12} sm={12}>
           <Paper className={classes.paper}> <Picture /> </Paper>
         </Grid>
       </Grid>

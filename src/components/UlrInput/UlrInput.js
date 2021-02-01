@@ -24,7 +24,7 @@ export default function UrlInput() {
             id="outlined-basic"
             label="Input URL"
             variant="outlined"
-            style = {{width:'50%', minWidth: '200px'}}/>
+            style = {{minWidth: '200px'}}/>
 
         <Button variant="contained" color="primary" href="#contained-buttons" style = {{height:'7ch'}}>Search</Button>
             
