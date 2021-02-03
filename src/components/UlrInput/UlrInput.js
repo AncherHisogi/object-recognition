@@ -12,6 +12,10 @@ const useStyles = makeStyles((theme) => ({
      
     },
   },
+  textSearch: {
+    color: '#148bff',
+    textDecoration: 'none',
+  }
 }));
 
 export default function UrlInput({onInputChange, onSearch}) {
@@ -21,12 +25,16 @@ export default function UrlInput({onInputChange, onSearch}) {
     <div>
       <Box color="text.primary" clone >
           <form className={classes.root} noValidate autoComplete="off">
-              <TextField 
+              <TextField
+              InputProps={{
+                className: classes.textSearch,
+              }}
               id="outlined-basic"
               label="Input URL"
               variant="outlined"
               style = {{minWidth: '200px'}}
               onChange={onInputChange}
+              spellcheck="false"
               />
           
           <Button variant="contained"   color="primary"style = {{height:'7ch'}} onClick={onSearch} >Search</Button>
