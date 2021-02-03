@@ -6,19 +6,22 @@ import InputField from './components/InputField/InputField';
 
 
 
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       input: '',
+      imageUrl: '',
     }
   }
 
   onInputChange = (event) =>{
-    console.log(event.target.value)
+    this.setState({input: event.target.value})
   }
 
   onSearch = () =>{
+    this.setState({imageUrl: this.state.input})
     console.log('click')
   }
 
@@ -26,7 +29,9 @@ class App extends Component {
     return (
       <div className="App">
         <Bar zIndex='modal' position='absolute'/>
-        <InputField onInputChange={this.onInputChange} onSearch={this.onSearch}/>
+        <InputField onInputChange={this.onInputChange}
+                    onSearch={this.onSearch}
+                    imageUrl={this.state.imageUrl}/>
       </div>
     );
   }

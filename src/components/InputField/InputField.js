@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function InputField({onInputChange, onSearch}) {
+export default function InputField({onInputChange, onSearch, imageUrl}) {
   const classes = useStyles();
 
   return (
@@ -34,7 +34,7 @@ export default function InputField({onInputChange, onSearch}) {
           <Paper className={classes.paper}> <UrlInput onInputChange={onInputChange} onSearch={onSearch}/> </Paper>
         </Grid>
         <Grid className={classes.grid} item xs={12} sm={12}>
-          <Paper className={classes.paper}> <Picture /> </Paper>
+          <Paper className={classes.paper}> <Picture imageUrl={imageUrl}/> </Paper>
         </Grid>
       </Grid>
     </div>
