@@ -4,9 +4,6 @@ import Bar from './components/Bar/Bar';
 import InputField from './components/InputField/InputField';
 
 
-
-
-
 class App extends Component {
   constructor() {
     super();
