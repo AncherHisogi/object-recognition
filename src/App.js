@@ -12,6 +12,7 @@ class App extends Component {
       imageUrl: '',
     }
   }
+  
 
   onInputChange = (event) =>{
     this.setState({input: event.target.value})
@@ -19,7 +20,6 @@ class App extends Component {
 
   onSearch = () =>{
     this.setState({imageUrl: this.state.input})
-    console.log('click')
   }
 
   render(){
