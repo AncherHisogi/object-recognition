@@ -8,14 +8,13 @@ const app = new Clarifai.App({
   apiKey: '25050b3732844eb089712f3ff0b522b0'
  });
 
-
-
 class App extends Component {
   constructor() {
     super();
     this.state = {
       input: '',
       imageUrl: '',
+      getList: [],
     }
   }
   
@@ -24,18 +23,20 @@ class App extends Component {
   onInputChange = (event) => {
     this.setState({input: event.target.value});
   }
-  
+
+
   onButtonSubmit = () => {
-    this.setState({imageUrl: this.state.input});
+    this.setState({imageUrl: this.state.input});  
     app.models
     .predict(
       GENERAL_MODEL,
       this.state.input
     )
-    .then(
-      function(response){
-        console.log(response)
-      }
+
+    .then(response => {
+      this.setState({getList: response.outputs[0].data.concepts})
+    }
+
     )
   }
 
@@ -45,6 +46,7 @@ class App extends Component {
         <Bar zIndex='modal' position='absolute'/>
         <InputField onInputChange={this.onInputChange}
                     onButtonSubmit={this.onButtonSubmit}
+                    getList={this.state.getList}
                     imageUrl={this.state.imageUrl}/>
       </div>
     );

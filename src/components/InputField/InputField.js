@@ -6,76 +6,51 @@ import UrlInput from '../UlrInput/UlrInput';
 import Picture from '../Picture/Picture.js';
 import List from '@material-ui/core/List';
 import { ListItem } from '@material-ui/core';
+import ListItemText from '@material-ui/core/ListItemText';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
     margin: 50,
     zIndex: 1,
     position: 'relative',
     top: -250,
   },
   grid: {
+    direction: 'row',
     justifyContent:'center',
-    display:'flex',
+    alignItems: 'flexstart',
   },
   paper: {
     padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
-  list: {
-    width: '100%',
-    maxWidth: 360,
-    background: 'rgb(110,168,255)',
-    background: 'radial-gradient(circle, rgba(110,168,255,1) 0%, rgba(18,128,235,1) 100%)',
-  },
 }));
 
 
 
-export default function InputField({onInputChange, onButtonSubmit, imageUrl}) {
+export default function InputField({onInputChange, onButtonSubmit, getList, imageUrl}) {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid className={classes.grid} item xs={12} sm={12}>
           <Paper className={classes.paper}> <UrlInput onInputChange={onInputChange}onButtonSubmit={onButtonSubmit}/> </Paper>
         </Grid>
-        <Grid className={classes.grid} item xs={12} sm={12}>
+        <Grid className={classes.grid} item xs={6}>
           <Paper className={classes.paper}> <Picture imageUrl={imageUrl}/> </Paper> 
         </Grid>
-        <Grid className={classes.grid} item xs={12} sm={12}>
-        <List className={classes.list}>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
-            <ListItem> s </ListItem>
+        <Grid className={classes.grid} item xs={6} >
+          <List className={classes.list} >
+                   {getList.map((load) => <Paper className={classes.paper}> <ListItem button> <ListItemText key={load.id} primary={load.name} /> </ListItem> </Paper> )}   
           </List>
-          </Grid>
+        </Grid>
       </Grid>
     </div>
   );
 }
 
+//getList.map((id, value) =>  <ListItem button> <ListItemText primary={id} /> </ListItem>) 
 
 
-
-
+// getList.map((id, value) => {return <ListItem button> <ListItemText primary={id} /> </ListItem>})

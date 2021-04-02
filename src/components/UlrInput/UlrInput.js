@@ -4,7 +4,6 @@ import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -18,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function UrlInput({onInputChange, onSearch, onButtonSubmit, imageUrl}) {
+export default function UrlInput({onInputChange, getList, onButtonSubmit, imageUrl}) {
   const classes = useStyles();
 
   return (
