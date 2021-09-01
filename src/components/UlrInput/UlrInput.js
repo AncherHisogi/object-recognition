@@ -4,7 +4,6 @@ import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -18,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function UrlInput({onInputChange, onSearch}) {
+export default function UrlInput({onInputChange, getList, onButtonSubmit, imageUrl}) {
   const classes = useStyles();
 
   return (
@@ -33,11 +32,11 @@ export default function UrlInput({onInputChange, onSearch}) {
               label="Input URL"
               variant="outlined"
               style = {{minWidth: '200px'}}
-              onChange={onInputChange}
-              spellcheck="false"
+              onInput={onInputChange}
+              spellCheck="false"
               />
           
-          <Button variant="contained"   color="primary"style = {{height:'7ch'}} onClick={onSearch} >Search</Button>
+          <Button variant="contained" color="primary"style = {{height:'7ch'}} onClick={onButtonSubmit}>Search</Button>
           </form>
           
       </Box>
