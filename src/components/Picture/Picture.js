@@ -9,9 +9,9 @@ export default function Picture({imageUrl}) {
   }
   else {
       return (
-        <Box color="text.primary" clone >
-            <img alt='test' src={imageUrl} style={{width: '100%', maxWidth: '500px'}}/>
-        </Box>
+        
+           <img alt='' src={imageUrl} style={{maxWidth: '500px', width: '100%'}}/>
+       
       );
   }
 } 
