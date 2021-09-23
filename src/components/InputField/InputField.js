@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import UrlInput from "../UlrInput/UlrInput";
 import Picture from "../Picture/Picture.js";
@@ -19,16 +18,22 @@ const useStyles = makeStyles((theme) => ({
   grid: {
     direction: "row",
     justifyContent: "center",
-    alignItems: "flexstart",
-    minWidth: "500px",
+    alignItems: "center",
+    //minWidth: "500px",
   },
   paper: {
-    padding: theme.spacing(1),
+    // padding: theme.spacing(1),
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
-  list:{
-    backgroundColor:"white"
+  paperPicture:{
+    padding: '0.5%',
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+  list: {
+    // backgroundColor: "white",
+    textAlign: "center",
   },
 }));
 
@@ -42,34 +47,32 @@ export default function InputField({
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid className={classes.grid} item xs={12} md={12}>
+        <Grid className={classes.grid} item xs={12} md={12} sm={12}>
           <Paper className={classes.paper}>
-            {" "}
             <UrlInput
               onInputChange={onInputChange}
               onButtonSubmit={onButtonSubmit}
-            />{" "}
+            />
           </Paper>
         </Grid>
-        <Grid className={classes.grid} item xs={6} md={6} sm={12}>
-            {" "}
-            <List>
-            <Picture imageUrl={imageUrl} />{" "}
-            </List>
+        <Grid className={classes.grid} item xs={"auto"} md={"auto"} sm={"auto"}>
+          <Paper className={classes.paperPicture}>
+            <Picture imageUrl={imageUrl} />
+          </Paper>
         </Grid>
-        <Grid className={classes.grid} item xs={6} md={4} sm={4}>
-          <List className={classes.list}>
+        <Grid className={classes.grid} item xs md sm>
+          <Paper className={classes.paper}>
             {getList.map((load) => (
-                <ListItem button>
-                  {" "}
-                  <ListItemText
-                    key={load.id}
-                    primary={load.name}
-                    secondary={`Confidence: ${Math.floor(load.value * 100)}%`}
-                  />{" "}
-                </ListItem>
+              <ListItem button className={classes.list}>
+                {" "}
+                <ListItemText
+                  key={load.id}
+                  primary={load.name}
+                  secondary={`Confidence: ${Math.floor(load.value * 100)}%`}
+                />{" "}
+              </ListItem>
             ))}
-          </List>
+          </Paper>
         </Grid>
       </Grid>
     </div>
