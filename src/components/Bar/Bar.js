@@ -66,7 +66,6 @@ export default function Bar() {
           <Typography variant="h6" className={classes.title}>
             Object recognition
           </Typography>
-          <Button color="inherit">Sign out</Button>
         </Toolbar>
       </AppBar>
     </div>

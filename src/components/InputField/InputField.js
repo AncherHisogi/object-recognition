@@ -4,7 +4,6 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import UrlInput from "../UlrInput/UlrInput";
 import Picture from "../Picture/Picture.js";
-import List from "@material-ui/core/List";
 import { ListItem } from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
 
