@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   paperList: {
     
     textAlign: "center",
-    minWidth: "500px",
+    minWidth: "350px",
     color: theme.palette.text.secondary,
   },
   paperPicture:{
