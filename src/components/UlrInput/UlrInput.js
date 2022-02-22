@@ -29,7 +29,7 @@ export default function UrlInput({onInputChange, getList, onButtonSubmit, imageU
                 className: classes.textSearch,
               }}
               id="outlined-basic"
-              label="Input URL"
+              label="Input Image URL"
               variant="outlined"
               style = {{minWidth: '200px'}}
               onInput={onInputChange}

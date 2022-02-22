@@ -15,23 +15,25 @@ const useStyles = makeStyles((theme) => ({
     top: -250,
   },
   grid: {
-    direction: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    //minWidth: "500px",
+    margin: "auto",
+    marginTop: '0px',
+    alignItems: "flex-start",
   },
   paper: {
-    // padding: theme.spacing(1),
     textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+  paperList: {
+    
+    textAlign: "center",
+    minWidth: "500px",
     color: theme.palette.text.secondary,
   },
   paperPicture:{
     padding: '0.5%',
-    textAlign: "center",
     color: theme.palette.text.secondary,
   },
   list: {
-    // backgroundColor: "white",
     textAlign: "center",
   },
 }));
@@ -44,9 +46,9 @@ export default function InputField({
 }) {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid className={classes.grid} item xs={12} md={12} sm={12}>
+    <div className={classes.root} >
+      <Grid container spacing={3} direction="row" >
+        <Grid className={classes.grid} item xs={12} md={12} sm={12} >
           <Paper className={classes.paper}>
             <UrlInput
               onInputChange={onInputChange}
@@ -54,13 +56,13 @@ export default function InputField({
             />
           </Paper>
         </Grid>
-        <Grid className={classes.grid} item xs={"auto"} md={"auto"} sm={"auto"}>
+        <Grid className={classes.grid} item >
           <Paper className={classes.paperPicture}>
             <Picture imageUrl={imageUrl} />
           </Paper>
         </Grid>
-        <Grid className={classes.grid} item xs md sm>
-          <Paper className={classes.paper}>
+        <Grid className={classes.grid} item >
+          <Paper className={classes.paperList}>
             {getList.map((load) => (
               <ListItem button className={classes.list}>
                 {" "}

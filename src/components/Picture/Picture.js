@@ -5,7 +5,7 @@ export default function Picture({ imageUrl }) {
      console.log("error");
   } else {
     return (
-      <img alt="" src={imageUrl} style={{ maxWidth: "1000px", width: "100%" }} />
+      <img alt="" src={imageUrl} style={{ width: "100%", maxWidth: "500px"}} />
     );
   }
 }
